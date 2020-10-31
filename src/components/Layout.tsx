@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './Layout.scss';
 
 type LayoutP = {
   children: React.ReactNode;
@@ -11,11 +12,20 @@ export function Layout({ children }: LayoutP) {
     <Container as="main">
       <header className="z-header">
         <h1>Zesty Maps</h1>
-        <nav>
-          <Link to="/">Search</Link>
-          <Link to="/map">Map</Link>
-        </nav>
+        <Nav>
+          <Nav.Item>
+            <Nav.Link as={Link} to="/">
+              Search
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={Link} to="/map">
+              Map
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
       </header>
+      <hr />
       {children}
     </Container>
   );

@@ -1,3 +1,6 @@
+// Need to direct typescript to use the googlemaps types (https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html)
+/// <reference types="@types/googlemaps" />
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';

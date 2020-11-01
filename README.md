@@ -3,7 +3,7 @@
 ### 1. Build and tag docker container
 
 ```sh
-$ docker build -t zesty-maps:master .
+$ docker build --build-arg REACT_APP_GMAPS_API_KEY=<YOUR_GOOGLE_MAPS_API_KEY> -t zesty-maps:master .
 ```
 
 ### 2. Run the built image
@@ -28,7 +28,7 @@ $ yarn
 3. Start the dev server
 
 ```sh
-$ yarn start
+$ REACT_APP_GMAPS_API_KEY=<YOUR_GOOGLE_MAPS_API_KEY> yarn start
 ```
 
 4. The app will be available at `http://localhost:3000/`

@@ -1,0 +1,12 @@
+.z-search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3em;
+
+  .form-group {
+    flex: 1;
+    padding-right: 1em;
+    margin-bottom: 0;
+  }
+}

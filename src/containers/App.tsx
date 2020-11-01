@@ -3,6 +3,7 @@ import { Property, PropertyContext } from 'context/PropertyContext';
 import React, { useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { MapComponent } from './Map';
+import { Search } from './Search';
 
 export function App() {
   const [properties, setProperties] = useState<Property[]>([]);
@@ -11,7 +12,8 @@ export function App() {
     <PropertyContext.Provider value={{ properties, setProperties }}>
       <Switch>
         <Route exact path="/">
-          SEARCH
+          <Search />
+        </Route>
         </Route>
         <Route exact path="/map">
           <MapComponent

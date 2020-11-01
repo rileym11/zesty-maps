@@ -1,0 +1,27 @@
+.z-details-view {
+  display: flex;
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+
+  flex-direction: column;
+
+  .image-contain {
+    flex: 1;
+
+    img {
+      width: 100%;
+      min-width: 200px;
+      max-width: 600px;
+    }
+  }
+
+  .details {
+    margin-left: 0;
+
+    @media screen and (min-width: 600px) {
+      margin-left: 1em;
+    }
+  }
+}

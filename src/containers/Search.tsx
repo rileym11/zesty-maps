@@ -89,7 +89,7 @@ export class Search extends Component {
           </Button>
         </Form>
         <hr />
-        <PropertyTable />
+        <PropertyTable distance={parseFloat(radius) || 10000} />
       </div>
     );
   }

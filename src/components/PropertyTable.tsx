@@ -3,7 +3,11 @@ import { Table } from 'react-bootstrap';
 import { Property, PropertyContext } from 'context/PropertyContext';
 import { Link } from 'react-router-dom';
 
-export function PropertyTable() {
+type PropertyTableP = {
+  distance: number;
+}
+
+export function PropertyTable({ distance }: PropertyTableP) {
   return (
     <PropertyContext.Consumer>
       {({ properties }) => (
@@ -26,7 +30,7 @@ export function PropertyTable() {
                     <td>{lat}</td>
                     <td>{lng}</td>
                     <td>
-                      <Link to={`/property/${p.propertyId}`}>Details</Link>
+                      <Link to={`/property/${p.propertyId}/${distance}`}>Details</Link>
                     </td>
                   </tr>
                 );

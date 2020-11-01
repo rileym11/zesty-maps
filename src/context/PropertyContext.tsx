@@ -26,7 +26,7 @@ type FetchStatisticsArgs = {
 };
 
 // API methods
-// TODO: make a fetch wrapper
+// TODO: make a fetch wrapper and baseApi an env variable
 export const baseApi = 'http://localhost:1235';
 
 export async function fetchPropertyTile(id: string): Promise<any> {

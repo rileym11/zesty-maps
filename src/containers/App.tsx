@@ -3,6 +3,7 @@ import { Property, PropertyContext } from 'context/PropertyContext';
 import React, { useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { MapComponent } from './Map';
+import PropertyDetails from './PropertyDetails';
 import { Search } from './Search';
 
 export function App() {
@@ -14,6 +15,8 @@ export function App() {
         <Route exact path="/">
           <Search />
         </Route>
+        <Route exact path="/property/:propertyId/:distance">
+          <PropertyDetails />
         </Route>
         <Route exact path="/map">
           <MapComponent

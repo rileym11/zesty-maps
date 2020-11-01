@@ -30,7 +30,8 @@ type FetchStatisticsArgs = {
 export const baseApi = 'http://localhost:1235';
 
 export async function fetchPropertyTile(id: string): Promise<any> {
-  const res = await fetch(`${baseApi}/display/${id}`);
+  // TODO: make params dynamic
+  const res = await fetch(`${baseApi}/display/${id}?parcel=orange&building=green&overlay=yes`);
   console.log('res', res);
 
   const b = await res.blob();

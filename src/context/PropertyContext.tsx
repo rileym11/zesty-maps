@@ -20,12 +20,22 @@ type FetchPropertiesArgs = {
   radius: number;
 };
 
+type FetchStatisticsArgs = {
+  propertyId: string;
+  distance: number;
+};
+
 // API methods
 // TODO: make a fetch wrapper
 export const baseApi = 'http://localhost:1235';
 
-export async function fetchPropertyTile(id: string) {
+export async function fetchPropertyTile(id: string): Promise<any> {
   const res = await fetch(`${baseApi}/display/${id}`);
+  console.log('res', res);
+
+  const b = await res.blob();
+
+  return URL.createObjectURL(b);
 }
 
 export async function fetchProperties({
@@ -47,14 +57,21 @@ export async function fetchProperties({
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(body), 
+    body: JSON.stringify(body),
   });
 
   return res.json();
 }
 
-export async function fetchPropertyStatistics(id: string) {
-  const res = await fetch(`${baseApi}/statistics/${id}`);
+export async function fetchPropertyStatistics({
+  propertyId,
+  distance,
+}: FetchStatisticsArgs): Promise<Statistic> {
+  const res = await fetch(
+    `${baseApi}/statistics/${propertyId}?distance=${distance}`
+  );
+
+  return res.json();
 }
 
 // Context
